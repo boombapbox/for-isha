@@ -1,0 +1,84 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff5f5;
+    font-family: 'Indie Flower', cursive;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffebee;
+    padding: 20px; /* Reduced padding for smaller screens */
+    border-radius: 20px;
+    border: 3px solid #ff6b81;
+    box-shadow: 0 8px 20px rgba(255, 107, 129, 0.3);
+    max-width: 90%; /* Adjusted for responsiveness */
+    width: 400px; /* Maximum width */
+    transform: scale(0.9); /* Scales down on smaller screens */
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 600px) {
+    .container {
+        transform: scale(0.8); /* Further scaling for very small screens */
+        padding: 15px;
+    }
+
+    .header_text {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+
+    .btn {
+        font-size: 16px; /* Smaller button text */
+        padding: 10px 20px; /* Reduced padding */
+    }
+}
+
+.header_text {
+    font-size: 36px;
+    color: #ff6b81;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(255, 107, 129, 0.2);
+}
+
+.gif_container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Allows buttons to stack on small screens */
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 20px;
+    border: 2px solid #ff6b81;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #ff6b81;
+    color: white;
+    font-family: 'Indie Flower', cursive;
+    box-shadow: 0 4px 10px rgba(255, 107, 129, 0.3);
+}
+
+.btn:hover
