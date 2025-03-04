@@ -15,34 +15,35 @@ body {
     background-color: #fff5f5;
     font-family: 'Indie Flower', cursive;
     overflow: hidden;
+    position: relative; /* Ensure bunny can move freely */
 }
 
 .container {
     text-align: center;
     background-color: #ffebee;
-    padding: 20px; /* Reduced padding for smaller screens */
+    padding: 20px;
     border-radius: 20px;
     border: 3px solid #ff6b81;
     box-shadow: 0 8px 20px rgba(255, 107, 129, 0.3);
-    max-width: 90%; /* Adjusted for responsiveness */
-    width: 400px; /* Maximum width */
-    transform: scale(0.9); /* Scales down on smaller screens */
+    max-width: 90%;
+    width: 400px;
+    transform: scale(0.9);
     transition: transform 0.3s ease;
 }
 
 @media (max-width: 600px) {
     .container {
-        transform: scale(0.8); /* Further scaling for very small screens */
+        transform: scale(0.8);
         padding: 15px;
     }
 
     .header_text {
-        font-size: 24px; /* Smaller font size for mobile */
+        font-size: 24px;
     }
 
     .btn {
-        font-size: 16px; /* Smaller button text */
-        padding: 10px 20px; /* Reduced padding */
+        font-size: 16px;
+        padding: 10px 20px;
     }
 }
 
@@ -65,7 +66,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap; /* Allows buttons to stack on small screens */
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -81,4 +82,59 @@ body {
     box-shadow: 0 4px 10px rgba(255, 107, 129, 0.3);
 }
 
-.btn:hover
+.btn:hover {
+    background-color: white;
+    color: #ff6b81;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 107, 129, 0.4);
+}
+
+#noButton {
+    background-color: #ff4757;
+    border-color: #ff4757;
+}
+
+#noButton:hover {
+    background-color: white;
+    color: #ff4757;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.wiggle {
+    animation: wiggle 0.5s ease-in-out;
+}
+
+@keyframes heartFade {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.5); }
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b81;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: heartFade 1s ease-out forwards;
+}
+
+/* Bunny Styles */
+.bunny_container {
+    position: absolute;
+    width: 50px; /* Adjust size of the bunny */
+    height: auto;
+    transition: all 0.5s ease; /* Smooth movement */
+}
+
+#bunny {
+    width: 100%;
+    height: auto;
+}
